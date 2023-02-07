@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+<h1>Article</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <a href="{% url 'article_delete' article.id %}" class="btn btn-secondary btn-sm">Delete article</a>
+</form>
+{% endblock content %}
